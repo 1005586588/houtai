@@ -17,8 +17,10 @@ public class file_Controller {
     public @ResponseBody String  fileUpload2(@RequestParam CommonsMultipartFile file,HttpServletRequest req) throws IOException {
          long  startTime=System.currentTimeMillis();
          
-         String filepath = req.getServletContext().getRealPath("/uploadFile/"); // 容器相对路径
- 		File ww = new File(filepath);
+         String filepath = req.getServletContext().getRealPath("uploadFile"); // 容器相对路径
+ 		String parentDir = new File(filepath).getParentFile().getParent();
+ 		parentDir=parentDir+"\\uploadFile";
+ 		File ww=new File(parentDir);
  		if (!ww.exists()) {
  			ww.mkdirs();
  		}
@@ -32,10 +34,11 @@ public class file_Controller {
 		}else {
 			ff = startTime+"";
 		}
-		filename = filepath + '/' + ff;
+		filename = parentDir + '/' + ff;
         //通过CommonsMultipartFile的方法直接写文件（注意这个时候）
         file.transferTo(new File(filename));
-        String p = req.getServletContext().getContextPath() + "/uploadFile/" + ff;
+       String p1= new File(req.getServletContext().getContextPath()).getParent(); 
+        String p = p1 + "/uploadFile/" + ff;
 		String json="{\"status\":1,\"url\":\""+p+"\"}";
         return json; 
     }
