@@ -45,45 +45,32 @@ function save() {
 		<form class="f2" action="insert" method="post">
 		</c:if>
 		
-		<div class="form-group">
+		<div class="form-group" style="margin-top: 20px;">
 			<label class="form-label "><span class="c-red">*</span>用户名：</label>
 			<div class="formControls ">
 				<input type="text" class="input-text" value="${requestScope.info.nike}"  id="user-tel" name="nike" >
 			</div>
-			<div class="col-4"> <span class="Validform_checktip"></span></div>
-		</div>
-		<div class="form-group">
+			<c:if test="${requestScope.info==null}">
 			<label class="form-label "><span class="c-red">*</span>密码：</label>
 			<div class="formControls ">
 				<input type="text" class="input-text" value="${requestScope.info.password}"  id="user-tel" name="password" >
 			</div>
+		</c:if>
 			<div class="col-4"> <span class="Validform_checktip"></span></div>
 		</div>
+		
+		<c:if test="${requestScope.info!=null}">
+				<input type="hidden" class="input-text" value="${requestScope.info.password}"  id="user-tel" name="password" >
+		</c:if>
+		
 		<div class="form-group">
 			<label class="form-label "><span class="c-red">*</span>姓名：</label>
 			<div class="formControls ">
 				<input type="text" class="input-text" value="${requestScope.info.name}"  id="user-tel" name="name" >
 			</div>
-			<div class="col-4"> <span class="Validform_checktip"></span></div>
-		</div>
-		<div class="form-group">
-			<label class="form-label "><span class="c-red">*</span>备注：</label>
-			<div class="formControls ">
-				<input type="text" class="input-text" value="${requestScope.info.comments}"  id="user-tel" name="comments" >
-			</div>
-			<div class="col-4"> <span class="Validform_checktip"></span></div>
-		</div>
-		<div class="form-group">
-			<label class="form-label "><span class="c-red">*</span>电话：</label>
-			<div class="formControls ">
-				<input type="text" class="input-text" value="${requestScope.info.tel}"  id="user-tel" name="tel" >
-			</div>
-			<div class="col-4"> <span class="Validform_checktip"></span></div>
-		</div>
-		<div class="form-group">
 			<label class="form-label "><span class="c-red">*</span>性别：</label>
 			<div class="formControls  skin-minimal">
-		     <select class="inputselect" name="sex">
+		     <select class="inputselect" name="sex" style="width: 167px;">
 				<c:forEach items="${requestScope.sexstatus}" var="r" varStatus="v">
 				<c:if test="${requestScope.info.sex!=v.index}">
 					<option value="${v.index}">${r}</option>
@@ -96,10 +83,25 @@ function save() {
 			</div>
 			<div class="col-4"> <span class="Validform_checktip"></span></div>
 		</div>
+		
+
+		<div class="form-group">
+			<label class="form-label "><span class="c-red">*</span>电话：</label>
+			<div class="formControls ">
+				<input type="text" class="input-text" value="${requestScope.info.tel}"  id="user-tel" name="tel" >
+			</div>
+			<label class="form-label "><span class="c-red">*</span>备注：</label>
+			<div class="formControls ">
+				<input type="text" class="input-text" value="${requestScope.info.comments}"  id="user-tel" name="comments" >
+			</div>
+			<div class="col-4"> <span class="Validform_checktip"></span></div>
+		</div>
+
+
 		<div class="form-group">
 			<label class="form-label "><span class="c-red">*</span>权限：</label>
 			<div class="formControls  skin-minimal">
-		<select class="inputselect" name="power">
+		<select class="inputselect" name="power" style="width: 167px;">
 			<c:forEach items="${requestScope.powerstatus}" var="r" varStatus="v">
 				<c:if test="${requestScope.info.power!=v.index}">
 					<option value="${v.index}">${r}</option>
@@ -110,13 +112,9 @@ function save() {
 			</c:forEach>
 			</select> 
 			</div>
-			<div class="col-4"> <span class="Validform_checktip"></span></div>
-		</div>	
-			
-		<div class="form-group">
 			<label class="form-label "><span class="c-red">*</span>状态：</label>
 			<div class="formControls  skin-minimal">
-			<select class="inputselect" name="status">
+			<select class="inputselect" name="status" style="width: 167px;">
 			<c:forEach items="${requestScope.workstatus}" var="r" varStatus="v">
 				<c:if test="${requestScope.info.status!=v.index}">
 					<option value="${v.index}">${r}</option>

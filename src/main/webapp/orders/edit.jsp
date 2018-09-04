@@ -46,7 +46,7 @@ function save() {
 			
 				<input type="hidden" class="input-text" value="${requestScope.info.status+1}"  id="user-tel" name="dest_status">
 			
-		<div class="form-group">
+		<div class="form-group" style="margin-top: 20px;">
 			<label class="form-label "><span class="c-red">*</span>运单号：</label>
 			<div class="formControls ">
 				<input type="text" class="input-text"  name="info">
@@ -78,10 +78,10 @@ function save() {
 				<input type="hidden" class="input-text" value="5" name="status">
 				<input type="hidden" class="input-text" value="${requestScope.info.status}"  id="user-tel" name="dest_status" >
 			
-		<div class="form-group">
+		<div class="form-group" style="margin-top: 30px;">
 			<label class="form-label "><span class="c-red">*</span>取消原因：</label>
 			<div class="formControls ">
-				<input type="text" class="input-text" name="info">
+				<textarea type="text" class="input-text" name="info"></textarea>
 			</div>
 			<div class="col-4"> <span class="Validform_checktip"></span></div>
 		</div>

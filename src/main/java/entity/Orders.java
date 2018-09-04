@@ -3,7 +3,7 @@ package entity;
 public class Orders {
 	
 	public static String[] sstatus = { "0未支付","1已支付","2已发货","3已收货","4已退货","5已取消" };
-	public static String[] assessstatusa = { "已评价","未评价" };
+	public static String[] assessstatusa = { "未评价","已评价" };
 	
 	int id ;
 	String date;

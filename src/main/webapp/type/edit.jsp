@@ -46,7 +46,7 @@ function save() {
 		<input type="hidden" name="parentid" value="${requestScope.parentid}">
 		</c:if>
 		
-		<div class="form-group">
+		<div class="form-group" style="margin-top: 20px;">
 			<label class="form-label "><span class="c-red">*</span>类别名称：</label>
 			<div class="formControls ">
 				<input type="text" class="input-text" value="${requestScope.info.name}" name="name" >

@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.annotation.SessionScope;
 
 import entity.Operator;
 import service.Operator_service;
@@ -31,9 +30,9 @@ public class login_Controller {
 			}else {
 			Operator sqlOperator= oservice.login(o);
 			 if(o.getPassword().equals(sqlOperator.getPassword())) {
+				req.getSession().removeAttribute("operator");
 				req.getSession().setAttribute("operator", sqlOperator);
 				req.getSession().setMaxInactiveInterval(5000000);
-				
 				return 0;
 			}else {
 				return 2;

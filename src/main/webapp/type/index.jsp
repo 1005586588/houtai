@@ -6,12 +6,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="../css/style.css"/>       
-        <link href="../assets/css/codemirror.css" rel="stylesheet">
+        <link href="../assets/css/codemirror.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/css/ace.min.css" />
         <link rel="stylesheet" href="../font/css/font-awesome.min.css" />
 		<script src="../js/jquery-1.9.1.min.js"></script>
@@ -22,7 +22,7 @@
 		<script src="../assets/js/jquery.dataTables.bootstrap.js"></script>
         <script src="../assets/layer/layer.js" type="text/javascript" ></script>          
 		<script src="../js/lrtk.js" type="text/javascript" ></script>
-         <script src="../assets/layer/layer.js" type="text/javascript"></script>	
+        <script src="../assets/layer/layer.js" type="text/javascript"></script>	
         <script src="../assets/laydate/laydate.js" type="text/javascript"></script>     
         
 <title>管理员</title>
@@ -35,15 +35,14 @@ var	parentid=${requestScope.parentid};
 			location.href = "delete?id=" + id+"&parentid="+parentid;
 		}
 	}
-
 	function fresh() {
 		location.href="index?parentid="+parentid;
 	}
 	function openwin() {
-		show("add?parentid="+parentid,400,500);
+		show("add?parentid="+parentid,380,180);
 	}
 	function openwin2(id) {
-		show("edit?id="+id,400,500);
+		show("edit?id="+id,380,180);
 	}
 	function changer(o) {
 		$(o).nextAll().remove();
@@ -58,7 +57,6 @@ var	parentid=${requestScope.parentid};
 			}
 		});
 	}
-	
 	$(function(){
 		if($(".myselect").attr("dataid")&&$(".myselect").attr("dataid")>0){
 			$.getJSON("getalltype",{id:$(".myselect").attr("dataid")},function(json){
@@ -79,7 +77,6 @@ var	parentid=${requestScope.parentid};
 		}
 	});
 	
-	
 </script>
 </head>
 
@@ -95,7 +92,7 @@ var	parentid=${requestScope.parentid};
        <div>
        <label>返回上级：</label><label>${requestScope.path}</label>
         <a onclick="openwin()" class="btn btn-warning"><i class="fa fa-plus"></i> 新增</a>
-      </div>
+       </div>
        </span>
      </div>
      <!--管理员列表-->
@@ -134,34 +131,7 @@ var	parentid=${requestScope.parentid};
 </html>
 
 <script type="text/javascript">
-$(function() { 
-	$("#administrator").fix({
-		float : 'left',
-		//minStatue : true,
-		skin : 'green',	
-		durationTime :false,
-		spacingw:50,//设置隐藏时的距离
-	    spacingh:270,//设置显示时间距
-	});
-});
-//字数限制
-function checkLength(which) {
-	var maxChars = 100; //
-	if(which.value.length > maxChars){
-	   layer.open({
-	   icon:2,
-	   title:'提示框',
-	   content:'您输入的字数超过限制!',	
-    });
-		// 超过限制的字数了就将 文本框中的内容按规定的字数 截取
-		which.value = which.value.substring(0,maxChars);
-		return false;
-	}else{
-		var curr = maxChars - which.value.length; //250 减去 当前输入的
-		document.getElementById("sy").innerHTML = curr.toString();
-		return true;
-	}
-};
+
 //初始化宽度、高度  
  $(".widget-box").height($(window).height()-215); 
 $(".table_menu_list").width($(window).width()-260);
@@ -172,9 +142,4 @@ $(".table_menu_list").width($(window).width()-260);
 	 $(".table_menu_list").width($(window).width()-260);
 	  $(".table_menu_list").height($(window).height()-215);
 	})
- laydate({
-    elem: '#start',
-    event: 'focus' 
-});
 </script>
-

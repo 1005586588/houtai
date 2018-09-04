@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import dao.Operator_dao;
 import entity.Operator;
 import service.Operator_service;
-import util.Ids;
 import util.SearchInfo;
 
 @Service
@@ -39,10 +38,6 @@ public class Operator_serviceImpl implements Operator_service{
 
 	public void updatestatus(Operator o) {
 		dao.updatestatus(o);
-	}
-
-	public void deleteall(Ids i) {
-		dao.deleteall(i);
 	}
 
 	public Operator login(Operator o) {

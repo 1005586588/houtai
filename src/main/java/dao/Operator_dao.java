@@ -9,7 +9,6 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import entity.Operator;
-import util.Ids;
 import util.SearchInfo;
 
 @Repository
@@ -29,9 +28,6 @@ public interface Operator_dao {
 	
 	@Delete("delete from operator where id=#{id}")
 	public void delete(int id);
-	
-	@Delete("delete from operator where id in ${ids}")
-	public void deleteall(Ids i);
 	
 	@Select("select * from operator where id=#{id}")
 	public Operator getById(int id);

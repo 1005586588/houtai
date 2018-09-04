@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.Product_dao;
-import dao.Type_dao;
 import entity.Product;
-import entity.Type;
 import service.Product_service;
 import util.SearchInfo;
 

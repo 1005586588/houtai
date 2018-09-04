@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
 <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 <link rel="stylesheet" href="assets/css/ace.min.css" />
 <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
@@ -19,9 +19,12 @@
 <link href="libs/css/style.css" rel="stylesheet" />
 <link href="libs/css/login.css" rel="stylesheet" />
 
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 <script src="assets/js/ace-extra.min.js"></script>
-<script src="js/jquery-1.9.1.min.js"></script>
 <script src="assets/layer/layer.js" type="text/javascript"></script>
+
+<script src="js/jquery-1.9.1.min.js"></script>
+
 <title>登录</title>
 
 <script>
@@ -78,8 +81,6 @@
 									<div class="space"></div>
 
 									<div class="clearfix">
-										<label class="inline"> <input type="checkbox"
-											class="ace"> <span class="lbl">保存密码</span></label>
 										<button type="button"
 											class="width-35 pull-right btn btn-sm btn-primary"
 											id="login_btn" class="login_bt">

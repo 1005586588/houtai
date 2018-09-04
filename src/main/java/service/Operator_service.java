@@ -18,8 +18,6 @@ public interface Operator_service {
 	
 	public void delete(int id);
 	
-	public void deleteall(Ids i);
-	
 	public Operator getById(int id);
 	
 	public Operator login(Operator o);

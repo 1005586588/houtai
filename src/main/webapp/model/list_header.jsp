@@ -14,14 +14,29 @@
 
 
 <script type="text/javascript">
-function show(url,w,h) {
-	layer.open({
-		type:2,
-		area:[w+'px',h+'px'],
-		fixed:false,
-		maxmin:true,
-		content:url
-	});
+function show(url,w,h,y) {
+	
+	if(y==null){
+		layer.open({
+			type:2,
+			area:[w+'px',h+'px'],
+			fixed:false,
+			maxmin:true,
+			content:url
+		});
+	}else{
+		layer.open({
+			type:2,
+			area:[w+'px',h+'px'],
+			fixed:false,
+			maxmin:true,
+			offset: '10px',
+			content:url
+		});
+	
+	}
+	
+	
 }
 
 </script>

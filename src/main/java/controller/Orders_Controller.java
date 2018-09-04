@@ -68,12 +68,10 @@ public class Orders_Controller {
 				where = " where  Orders.date < '"+date2+"'  and Orders.date > '"+date6+"' ";
 				break;
 			default :
-				
-					
 			}
+			m.put("txt",txt);
 		}
 		m.put("select", select);
-		m.put("txt", select == 0 ? "'" + txt + "'" : txt);
 	
 		m.put("typerow1", aservice.select());
 		m.put("typerow2", sservice.select());

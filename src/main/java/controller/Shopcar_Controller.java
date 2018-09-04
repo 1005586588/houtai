@@ -35,16 +35,14 @@ public class Shopcar_Controller {
 			default:
 				where = " where product.fullname like  '%" + txt + "%' ";
 			}
+			m.put("txt",txt);
 		}
 		m.put("select", select);
-		m.put("txt", select == 0 ? "'" + txt + "'" : txt);
-	
 	
 		m.put("typerow1", pservice.select(info));
 		m.put("typerow2", sservice.select());
 		info.setWhere(where);
 		m.put("search", info);
-//		info.setCanPage(false);
 		m.put("list", service.select(info));
 	}
 
@@ -59,6 +57,12 @@ public class Shopcar_Controller {
 	public String deleteall(String ids) {
 		// SqlHelper.executeUpdate("delete from quesbal where id in ("+ids+") ");
 		return "redirect:index";
+	}
+	
+	@RequestMapping("show")
+	public String show(int id,ModelMap m) {
+		m.put("productlist", pservice.getById(id));
+		return "shopcar/edit";
 	}
 
 }

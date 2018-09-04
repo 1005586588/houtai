@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import entity.Operator;
 import service.Operator_service;
-import util.Ids;
 import util.JsonUtil.jsonInfo;
 import util.SearchInfo;
 
@@ -34,12 +33,11 @@ public class Operator_Controller {
 			default:
 				where = "where operator.nike like  '%" + txt + "%' ";
 			}
+			m.put("txt",txt);
 		}
 		m.put("select", select);
-		m.put("txt", select == 0 ? "'" + txt + "'" : txt);
-	
+		
 		m.put("powerstatus", Operator.powerstatus);
-		 
 		info.setWhere(where);
 		m.put("search", info);
 //		info.setCanPage(false);
@@ -79,14 +77,6 @@ public class Operator_Controller {
 	public String delete(int id) {
 		service.delete(id);
 		return "redirect:index";
-	}
-	
-
-	@RequestMapping("deleteall")
-	public  @ResponseBody Ids deleteall(Ids i) {
-		// SqlHelper.executeUpdate("delete from quesbal where id in ("+ids+") ");
-		service.deleteall(i);
-		return new Ids(null);
 	}
 
 	@RequestMapping("add")

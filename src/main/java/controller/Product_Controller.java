@@ -70,16 +70,14 @@ public class Product_Controller {
 			default:
 				where = "where Product.fullname like  '%" + txt + "%' ";
 			}
+			m.put("txt",txt);
 		}
 		m.put("select", select);
-		m.put("txt", select == 0 ? "'" + txt + "'" : txt);
-	
+
 		m.put("productstatus", Product.productstatus);
-		 m.put("typerow", tservice.select2());
-		 
+		m.put("typerow", tservice.select2());
 		info.setWhere(where);
 		m.put("search", info);
-//		info.setCanPage(false);
 		m.put("list", service.select(info));
 	}
 
@@ -117,8 +115,6 @@ public class Product_Controller {
 	public String add(ModelMap m) {
 		m.put("productstatus", Product.productstatus);
 		m.put("typerow", tservice.select2());
-		
-	
 		return "product/edit";
 	}
 
