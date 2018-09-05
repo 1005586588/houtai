@@ -26,6 +26,15 @@
  <div class="clearfix">
   <div class="home_btn">
      <div>
+     
+     <c:if test="${sessionScope.operator.status==1}">	
+		<a href="orders/index" title="商品订单" class="btn  btn-info btn-sm no-radius" style="width: 100px;">
+     	<i class="bigger-200"><img src="images/icon-addwz.png" /></i>
+     	<h5 class="margin-top">商品订单</h5>
+    	</a>					
+	 </c:if>
+     
+     <c:if test="${sessionScope.operator.status==0}">	
      <a href="product/index"  title="添加商品" class="btn  btn-info btn-sm no-radius" style="width: 100px;">
      <i class="bigger-200"><img src="images/icon-addp.png" /></i>
      <h5 class="margin-top">添加商品</h5>
@@ -50,7 +59,7 @@
      <i class="bigger-200"><img src="images/icon-grxx.png" /></i>
      <h5 class="margin-top">个人信息</h5>
      </a>
-     
+     </c:if>
      </div>
   </div>
  

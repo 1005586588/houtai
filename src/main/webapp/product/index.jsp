@@ -136,7 +136,7 @@ var	txt="${requestScope.txt}";
 									<td>${r.fullname}</td>
 									<td>
 									<c:if test="${r.pics!=null}">
-									<img src="${r.pics}" width="60" height="90" />
+									<img src="${r.pic}" width="60" height="90" />
 									</c:if>
 									</td>
 									<td>${r.activity}</td>
