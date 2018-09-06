@@ -97,7 +97,7 @@ public class Orders_Controller {
 	@RequestMapping("updatestatus")
 	public String updatestatus(int id, ModelMap m) {
 		
-		m.put("info", service.getById(id));
+		 m.put("info", service.getById(id));
 		 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		 String date = sdf.format(new Date());
 		 m.put("date", date);
@@ -105,8 +105,11 @@ public class Orders_Controller {
 	}
 	
 	@RequestMapping("insert")
-	public @ResponseBody jsonInfo insert(Orders o,Orders_status a) {
+	public @ResponseBody jsonInfo insert(Integer orders_id,Orders o,Orders_status a) {
 //		o.setId(a.getOrders_id());
+		o.setId(orders_id);
+		System.out.println(o.getId());
+		System.out.println(o.getStatus());
 		service.updatestatus(o);
 		oservice.insert(a);
 		return new jsonInfo(1, "");

@@ -71,12 +71,12 @@ function save() {
 		 <c:if test="${requestScope.info.status==4}">
 		<form class="f2" action="insert" method="post">
 					
-				<input type="hidden" class="input-text" value="${requestScope.info.id+1}"  id="user-tel" name="orders_id" >
+				<input type="hidden" class="input-text" value="${requestScope.info.id}"  id="user-tel" name="orders_id" >
 			
 				<input type="hidden" class="input-text" value="${requestScope.date}" name="date">
 
 				<input type="hidden" class="input-text" value="5" name="status">
-				<input type="hidden" class="input-text" value="${requestScope.info.status}"  id="user-tel" name="dest_status" >
+				<input type="hidden" class="input-text" value="${requestScope.info.status+1}"  id="user-tel" name="dest_status" >
 			
 		<div class="form-group" style="margin-top: 30px;">
 			<label class="form-label "><span class="c-red">*</span>取消原因：</label>

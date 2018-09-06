@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import entity.User;
 import service.Product_service;
 import service.Shopcar_service;
 import service.User_service;
@@ -64,5 +64,6 @@ public class Shopcar_Controller {
 		m.put("productlist", pservice.getById(id));
 		return "shopcar/edit";
 	}
+	
 
 }

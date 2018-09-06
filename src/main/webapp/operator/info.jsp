@@ -4,25 +4,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		
-		
-		<link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="../css/style.css" />
-		<link href="../assets/css/codemirror.css" rel="stylesheet">
-			<link rel="stylesheet" href="../assets/css/ace.min.css" />
-			<link rel="stylesheet" href="../font/css/font-awesome.min.css" />
-			<script src="../js/jquery-1.9.1.min.js"></script>
-			<script src="../assets/layer/layer.js" type="text/javascript"></script>
-			<script src="../assets/laydate/laydate.js" type="text/javascript"></script>
-			<script src="../assets/js/bootstrap.min.js"></script>
-			<script src="../assets/js/typeahead-bs2.min.js"></script>
-			<script src="../assets/js/jquery.dataTables.min.js"></script>
-			<script src="../assets/js/jquery.dataTables.bootstrap.js"></script>
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-			<title>个人信息管理</title>
+
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<link href="../assets/css/codemirror.css" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/ace.min.css" />
+<link rel="stylesheet" href="../font/css/font-awesome.min.css" />
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../assets/layer/layer.js" type="text/javascript"></script>
+<script src="../assets/laydate/laydate.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/typeahead-bs2.min.js"></script>
+<script src="../assets/js/jquery.dataTables.min.js"></script>
+<script src="../assets/js/jquery.dataTables.bootstrap.js"></script>
+
+<title>个人信息管理</title>
 </head>
 
 <body>
@@ -32,15 +32,15 @@
 			<div class="type_title">管理员信息</div>
 			<div class="xinxi">
 				<form class="f2" action="update" method="post">
-					<input type="hidden" name="id" value="${requestScope.info.id}">
+					<input type="hidden" name="id" value="${requestScope.info.id}" />
 					<div class="form-group">
 						<label class="col-sm-3 control-label no-padding-right"
 							for="form-field-1">用户名： </label>
 						<div class="col-sm-9">
 							<input type="text" id="website-title" class="col-xs-7 text_info"
 								disabled="disabled" value="${requestScope.info.nike}"
-								id="user-tel" name="nike"> &nbsp;&nbsp;&nbsp;
-								<a href="javascript:ovid()"
+								id="user-tel" name="nike" /> &nbsp;&nbsp;&nbsp; <a
+								href="javascript:ovid()"
 								onclick="change_Password(${requestScope.info.id})"
 								class="btn btn-warning btn-xs">修改密码</a>
 						</div>
@@ -71,7 +71,7 @@
 						<div class="col-sm-9">
 							<input type="text" class="col-xs-7 text_info"
 								value="${requestScope.info.tel}" id="website-title" name="tel"
-								disabled="disabled">
+								disabled="disabled" />
 						</div>
 					</div>
 
@@ -81,7 +81,7 @@
 						<div class="col-sm-9">
 							<input type="text" id="website-title" class="col-xs-7 text_info"
 								disabled="disabled" value="${requestScope.info.name}"
-								name="name">
+								name="name" />
 						</div>
 					</div>
 
@@ -128,19 +128,19 @@
 						<div class="col-sm-9">
 							<input type="text" id="website-title" class="col-xs-7 text_info"
 								disabled="disabled" value="${requestScope.info.comments}"
-								name="comments">
+								name="comments" />
 						</div>
 					</div>
 
-					<div class="formControls ">
+					<div class="formControls">
 						<input type="hidden" class="input-text"
-							value="${requestScope.info.password}" name="password">
+							value="${requestScope.info.password}" name="password" />
 					</div>
 
 
 
-					<button onclick="save_info();" class="btn btn-success radius"
-						type="button">保存修改</button>
+					<button style="display: none;" onclick="save_info();"
+						class="btn btn-success radius" type="button">保存修改</button>
 				</form>
 
 				<button onclick="modify();" class="btn btn-danger radius"
@@ -154,19 +154,18 @@
 	<!--修改密码样式-->
 
 	<div class="change_Pass_style" id="change_Pass">
-	<form class="f1" action="updatepassword" method="post">
-	<input type="hidden" name="id" value="${requestScope.info.id}">
-		<ul class="xg_style">
-			<li><label class="label_name">原&nbsp;&nbsp;密&nbsp;码</label><input
-				name="password" type="password" class="" id="password"></li>
-				
-			<li><label class="label_name">新&nbsp;&nbsp;密&nbsp;码</label><input
-				name="newpassword" type="password" class="" id="Nes_pas"></li>
-			<li><label class="label_name">确认密码</label><input name="newpassword2"
-				type="password" class="" id="c_mew_pas"></li>
+		<form class="f1" action="updatepassword" method="post">
+			<input type="hidden" name="id" value="${requestScope.info.id}" />
+				<ul class="xg_style">
+					<li><label class="label_name">原&nbsp;&nbsp;密&nbsp;码</label><input
+						name="password" type="password" class="" id="password" /></li>
 
-		</ul>
-		<!--       <div class="center"> <button class="btn btn-primary" type="button" id="submit">确认修改</button></div>-->
+					<li><label class="label_name">新&nbsp;&nbsp;密&nbsp;码</label><input
+						name="newpassword" type="password" class="" id="Nes_pas" /></li>
+					<li><label class="label_name">确认密码</label><input
+						name="newpassword2" type="password" class="" id="c_mew_pas" /></li>
+
+				</ul> <!--       <div class="center"> <button class="btn btn-primary" type="button" id="submit">确认修改</button></div>-->
 		</form>
 	</div>
 </body>
